@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import {Button,Card } from 'react-bootstrap'
-import { getDatabase, ref, onValue } from "firebase/database";
+import { getDatabase, ref, onValue,remove } from "firebase/database";
 import { blogInformation } from '../slice/BlogDetails';
 import { Link } from 'react-router-dom';
 import ScrollToTop from "react-scroll-to-top";
 import { useDispatch} from 'react-redux';
+import { AiFillDelete } from 'react-icons/ai';
+import Swal from 'sweetalert2'
 
 const TabAllBlog = () => {
 
@@ -16,9 +18,10 @@ const TabAllBlog = () => {
         onValue(ref(db, 'blog'), (snapshot) => {
           let arr = []
           snapshot.forEach((item)=>{
-            let show =  item.val() 
+            console.log(item.val())
+            // let show =  (item.val(), key: item.key)
             
-            arr.push(show)
+            arr.push({...item.val(), id: item.key})
           });
           setUiShow(arr);
           });
@@ -27,6 +30,31 @@ const TabAllBlog = () => {
     let handleDetails=(item)=>{
         dispatch(blogInformation(item))
         localStorage.setItem("blogInfo", JSON.stringify(item))
+    }
+
+    let handleBlogDelete =(id)=>{
+        Swal.fire({
+        title: 'Are you sure?',
+        text: "Deleted your's blog",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#162030',
+        confirmButtonBorder: 'border-none',
+        confirmButtonMarginTop: '10px',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+        padding:"70px",
+        }).then((result) => {
+        if (result.isConfirmed) {
+            remove(ref(db, 'blog/' + id))
+            Swal.fire(
+            'Deleted!',
+            'Your post has been deleted.',
+            'success'
+            )
+        }
+        })
+        
     }
 
   return (
@@ -43,8 +71,15 @@ const TabAllBlog = () => {
                     
                 <Card.Body>
                     <Card.Title> Title :{item.title} </Card.Title>
-                    <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link> 
+                    <div className='delete_Button--Align'>
 
+                    <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link>
+                   
+                    <Button onClick={()=>handleBlogDelete(item.id)} variant="danger">Delete
+                        <AiFillDelete className=''></AiFillDelete>
+                    </Button>
+                   
+                    </div>
                 </Card.Body>
               </div>
                     

@@ -3,13 +3,14 @@ import TabContentForm from '../component/TabContentForm';
 import { Col,Row,Button,Nav,Tab} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import TabAllBlog from '../component/TabAllBlog';
+import DeleteTabBlog from '../component/DeleteTabBlog'
 
 const UploadBlog = () => {
   return (
-    <>
+    <div>
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
-        <Col sm={3}>
+        <Col sm={2}>
           <Nav variant="pills" className="tab_bg flex-column">
 
             <Nav.Item className='py-3'>
@@ -24,22 +25,11 @@ const UploadBlog = () => {
               <Nav.Link eventKey="four">Delete Your Blog</Nav.Link>
             </Nav.Item >
 
-            <Nav.Item className='py-3'>
-              <Nav.Link eventKey="five">Your All Blogs</Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className='py-3'>
-              <Nav.Link eventKey="six">Your All Blogs</Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item className='py-3'>
-              <Nav.Link eventKey="seven">Your All Blogs</Nav.Link>
-            </Nav.Item>
-
-          <Link to="/"><Button className='mt-5 mx-2' variant="primary">Back to home</Button></Link>
+            <Link to="/"><Button className='mt-5 mx-2' variant="primary">Back to home</Button></Link>
           </Nav>
         </Col>
-        <Col sm={9}>
+
+        <Col sm={10}>
           <Tab.Content>
           
             <Tab.Pane eventKey="first">
@@ -50,12 +40,16 @@ const UploadBlog = () => {
                 <TabAllBlog></TabAllBlog>
             </Tab.Pane>
 
+            <Tab.Pane eventKey="four">
+               <DeleteTabBlog></DeleteTabBlog>
+            </Tab.Pane>
+
           </Tab.Content>
         
         </Col>
       </Row>
     </Tab.Container>
-    </>
+    </div>
   )
 }
 

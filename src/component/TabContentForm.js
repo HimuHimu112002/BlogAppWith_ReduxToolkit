@@ -63,8 +63,8 @@ let handleDiscription = (e)=>{
 }
 
 let handleSubmit =()=>{
-  toast.success("Blog Upload Successfull.");
-  if(setTitle && setAuthor && setCategoris && setDate && setDiscriptions){
+  if(title && author && categoris && date && discriptions && image){
+    toast.success("Blog Upload Successfull.");
     set(push(ref(db, "blog")),{
       title:title,
       author:author,
@@ -86,8 +86,8 @@ let handleSubmit =()=>{
     <ToastContainer position="top-right" theme="dark"/>
 
       <Row>
-        <Col md="8">
-          <Form>
+        <Col md="8" className='shadow p-3'>
+          <Form >
           <h1 className='py-5'>Uploding Your New Blog</h1>
 
             <Form.Group onChange={handleTitle} className="mb-4" controlId="exampleForm.ControlInput1">
@@ -97,22 +97,22 @@ let handleSubmit =()=>{
 
             <Form.Group onChange={handleAuthor} className="mb-4" controlId="exampleForm.ControlInput1">
               <Form.Label>Author Name</Form.Label>
-              <Form.Control type="text" placeholder="Blog Title" />
+              <Form.Control type="text" placeholder="Author Name" />
             </Form.Group>
 
             <Form.Group onChange={handleCategori} className="mb-4" controlId="exampleForm.ControlInput1">
               <Form.Label>Blog Categoris</Form.Label>
-              <Form.Control type="text" placeholder="Blog Title" />
+              <Form.Control type="text" placeholder="Blog Categoris" />
             </Form.Group>
 
             <Form.Group onChange={handleImageUpload} className="mb-4" controlId="exampleForm.ControlInput1">
               <Form.Label>Blog Thumbnil</Form.Label>
-              <Form.Control type="file" placeholder="Blog Title" />
+              <Form.Control type="file"/>
             </Form.Group>
 
             <Form.Group onChange={handleDate} className="mb-4" controlId="exampleForm.ControlInput1">
               <Form.Label>Uploding Date</Form.Label>
-              <Form.Control type="date" placeholder="Blog Title" />
+              <Form.Control type="date"/>
             </Form.Group>
 
             <Form.Group onChange={handleDiscription} className="mb-3" controlId="exampleForm.ControlTextarea1">

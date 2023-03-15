@@ -1,5 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import Nav from 'react-bootstrap/Nav';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,11 +11,11 @@ const Footer = () => {
           <Col md="4">
             <h3>Menu Item</h3>
             <ul>
-              <li>Home</li>
-              <li>Blog</li>
-              <li>About</li>
-              <li>Contact</li>
-              <li>Upload Blog</li>
+            <Link to="/"><Nav.Link>Home</Nav.Link></Link>
+            <Link to="/allblog"><Nav.Link>Blog</Nav.Link></Link> 
+            <Link to="/about"><Nav.Link>About</Nav.Link></Link>
+            <Link to="/contact"><Nav.Link>Contact</Nav.Link></Link>
+            <Link to="/uploadBlog"><Nav.Link>Upload Your Blog</Nav.Link></Link>
             </ul>
           </Col>
           <Col md="4">
