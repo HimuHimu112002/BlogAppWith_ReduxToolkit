@@ -27,17 +27,8 @@ const NavMenu = () => {
                            <Link to="/uploadBlog"><Nav.Link href="#action2">Upload Your Blog</Nav.Link></Link>
                                           
                         </Nav>
-                        <Form className="d-flex">
-                            <Form.Control
-                            type="search"
-                            placeholder="Search  your favourite blog"
-                            className="me-3"
-                            aria-label="Search"
-                            />
-                            <Button className='Nav-Menu--SearchIcon' variant="outline-success">Search</Button>
-                        </Form>
-
-                        </Navbar.Collapse>
+                        
+                      </Navbar.Collapse>
                     </Container>
                 </Navbar>
                 </Col>

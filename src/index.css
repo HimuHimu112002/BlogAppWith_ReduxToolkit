@@ -27,7 +27,7 @@ a{
 /* ===============> nav menu design end <================*/
 
 .slider img{
-  height: 70vh;
+  height: 90vh;
 }
 
 /* ===============> slider design end <================*/
@@ -64,11 +64,45 @@ a{
 
 .contact_button{
   margin-right: 5px;
+ 
+}
+
+.Count_contact-button{
+  text-align: center;
+}
+
+.Count_contact-button button{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.from_main--section{
+  margin: auto;
 }
 
 .delete_Button--Align{
   display: flex;
   justify-content: space-between;
+}
+
+
+.Search_section{
+  display: flex;
+  justify-content: space-between;
+}
+
+select{
+  width: 20% !important;
+  margin-bottom: 10px !important;
+  box-shadow: none !important;
+  border-color: brown !important;
+}
+
+.bg_img{
+  background-image: url(../public/image/res2.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 /* ===============> footer design start <================*/
 

@@ -4,6 +4,9 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { useDispatch} from 'react-redux';
 import { blogInformation } from '../slice/BlogDetails';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 const BlogItemProps = () => {
 
@@ -28,6 +31,10 @@ const BlogItemProps = () => {
     dispatch(blogInformation(item))
     localStorage.setItem("blogInfo", JSON.stringify(item))
   }
+
+  useEffect(()=>{
+    AOS.init({duration: 2000})
+  },[])
   
   return (
 
@@ -37,7 +44,7 @@ const BlogItemProps = () => {
       <div className='row justify-content-center'>
 
         {UiShow.map((item)=>(
-          <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
+          <div data-aos="zoom-in" onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
             
             <div className='card p-0 overflow-hidden h-100 shadow p-2' >
               <Card.Img className='img_height' src={item.image} variant="top"></Card.Img>

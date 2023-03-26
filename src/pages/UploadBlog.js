@@ -1,16 +1,16 @@
 import React from 'react'
 import TabContentForm from '../component/TabContentForm';
-import { Col,Row,Button,Nav,Tab} from 'react-bootstrap'
+import { Col,Row,Button,Nav,Tab,Container} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import TabAllBlog from '../component/TabAllBlog';
 import DeleteTabBlog from '../component/DeleteTabBlog'
 
 const UploadBlog = () => {
   return (
-    <div>
+    <Container>
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
-        <Col sm={2}>
+        <Col sm={2} className="mt-5">
           <Nav variant="pills" className="tab_bg flex-column">
 
             <Nav.Item className='py-3'>
@@ -29,7 +29,7 @@ const UploadBlog = () => {
           </Nav>
         </Col>
 
-        <Col sm={10}>
+        <Col sm={10} className="mt-5">
           <Tab.Content>
           
             <Tab.Pane eventKey="first">
@@ -49,7 +49,7 @@ const UploadBlog = () => {
         </Col>
       </Row>
     </Tab.Container>
-    </div>
+    </Container>
   )
 }
 

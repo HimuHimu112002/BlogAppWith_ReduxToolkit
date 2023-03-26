@@ -4,43 +4,46 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-const Contact = () => {
+
+const ContactFrom = () => {
   return (
     <Container>
         <Row>
-            <Col>
+            <Col md="6" className='mb-5 from_main--section'>
             
-                <h1 className='text-center py-5'>Contact With Us</h1>
+                <h1 className='text-center text-white py-5'>Contact With Us</h1>
 
                 <Form>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Name</Form.Label>
+                        <Form.Label className='text-white'>Name</Form.Label>
                         <Form.Control type="text" placeholder="Name" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label className='text-white'>Email address</Form.Label>
                         <Form.Control type="email" placeholder="name@example.com" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Label>Phone Number</Form.Label>
+                        <Form.Label className='text-white'>Phone Number</Form.Label>
                         <Form.Control type="number" placeholder="number" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Example textarea</Form.Label>
+                        <Form.Label className='text-white'>Example textarea</Form.Label>
                         <Form.Control as="textarea" rows={3} />
                     </Form.Group>
+                    <div className='Count_contact-button mb-5'>
+
+                        <Button className='px-5 py-2' variant="primary">sent</Button>
+
+                    </div>
                 </Form>
 
             </Col>
 
-            <div>
-
-            <Button className='contact_button' variant="info">sent</Button>
-            <Link to="/"><Button variant="info">Bank Home</Button></Link>
-            </div>
+           
         </Row>
+
     </Container>
   )
 }
 
-export default Contact
+export default ContactFrom

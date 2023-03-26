@@ -86,7 +86,7 @@ let handleSubmit =()=>{
     <ToastContainer position="top-right" theme="dark"/>
 
       <Row>
-        <Col md="8" className='shadow p-3'>
+        <Col md="10" className='shadow p-3'>
           <Form >
           <h1 className='py-5'>Uploding Your New Blog</h1>
 
