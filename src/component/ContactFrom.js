@@ -2,8 +2,6 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
-
 
 const ContactFrom = () => {
   return (
@@ -30,6 +28,7 @@ const ContactFrom = () => {
                         <Form.Label className='text-white'>Example textarea</Form.Label>
                         <Form.Control as="textarea" rows={3} />
                     </Form.Group>
+
                     <div className='Count_contact-button mb-5'>
 
                         <Button className='px-5 py-2' variant="primary">sent</Button>
@@ -37,12 +36,11 @@ const ContactFrom = () => {
                     </div>
                 </Form>
 
-            </Col>
-
-           
+            </Col>   
         </Row>
-
+        
     </Container>
+
   )
 }
 

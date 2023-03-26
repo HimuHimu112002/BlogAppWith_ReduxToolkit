@@ -68,6 +68,3 @@ const BlogItemProps = () => {
 }
 
 export default BlogItemProps
-// {UiShow.map((item)=>(
-//   <Te onClick={()=>handleDetails(item)} img={item.image} title={item.title}></Te>
-// ))}

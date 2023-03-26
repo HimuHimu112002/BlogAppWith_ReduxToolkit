@@ -18,6 +18,7 @@ const Footer = () => {
             <Link to="/uploadBlog"><Nav.Link>Upload Your Blog</Nav.Link></Link>
             </ul>
           </Col>
+
           <Col md="4">
           <h3>Contact Information</h3>
             <ul>
@@ -25,6 +26,7 @@ const Footer = () => {
               <li>JonesDevas@gmali.com</li>
             </ul>
           </Col>
+
           <Col md="4">
           <h3>Location</h3>
             <ul>
@@ -33,6 +35,7 @@ const Footer = () => {
               
             </ul>
           </Col>
+          
         </Row>
       </Container>
     </div>

@@ -9,12 +9,12 @@ import CountSection from './CountSection'
 const RootComponents = () => {
   return (
     <div>
-        <ScrollToTop smooth/>
-        <NavMenu></NavMenu>
-        <Slider></Slider>
-        <BlogItemProps></BlogItemProps>
-        <CountSection></CountSection>
-        <Footer></Footer>
+      <ScrollToTop smooth/>
+      <NavMenu></NavMenu>
+      <Slider></Slider>
+      <BlogItemProps></BlogItemProps>
+      <CountSection></CountSection>
+      <Footer></Footer>
     </div>
   )
 }

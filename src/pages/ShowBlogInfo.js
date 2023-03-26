@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Col, Container, Row,Button } from 'react-bootstrap'
+import { Container, Row,Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { blogInformation } from '../slice/BlogDetails'

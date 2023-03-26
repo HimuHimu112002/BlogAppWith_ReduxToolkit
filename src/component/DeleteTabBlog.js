@@ -18,10 +18,9 @@ const TabAllBlog = () => {
         onValue(ref(db, 'blog'), (snapshot) => {
           let arr = []
           snapshot.forEach((item)=>{
-            console.log(item.val())
-            // let show =  (item.val(), key: item.key)
             
             arr.push({...item.val(), id: item.key})
+            
           });
           setUiShow(arr);
           });
