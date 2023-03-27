@@ -104,6 +104,26 @@ select{
   background-position: center;
   background-size: cover;
 }
+
+
+.Total_blog{
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  line-height: 40px;
+  padding: 10px 50px;
+  font-size: 20px;
+  color: white;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+}
+
+.home_search{
+  width: 250px;
+}
 /* ===============> footer design start <================*/
 
 .footerBG{

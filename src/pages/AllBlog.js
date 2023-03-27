@@ -13,6 +13,8 @@ const AllBlog = () => {
     const db = getDatabase()
     const dispatch = useDispatch()
     const [UiShow, setUiShow] = useState([]);
+    let [SearchArray, setSearchArray] = useState([])
+
 
     useEffect(()=>{
         onValue(ref(db, 'blog'), (snapshot) => {
@@ -31,9 +33,28 @@ const AllBlog = () => {
         localStorage.setItem("blogInfo", JSON.stringify(item))
     }
 
+    // Aos animation ===========
     useEffect(()=>{
       AOS.init({duration: 3000})
     },[])
+
+
+
+    // Search Section
+    let handleUserListSearch=(e)=>{
+      let SearchFilterArray = []
+      if (e.target.value.length == 0) {
+          setSearchArray([])
+          // array value faka thakle sokol userlist data dekhabe 
+      }else{
+        UiShow.filter((item)=>{
+              if(item.title.toLowerCase().includes(e.target.value.toLowerCase())){
+                  SearchFilterArray.push(item)
+                  setSearchArray(SearchFilterArray)
+              }
+          })
+      }
+  }
 
   return (
     <>
@@ -42,17 +63,49 @@ const AllBlog = () => {
     <h1 className='text-center py-5'>All Blogs</h1>
     <section className='py-4 container'>
     <div className='Search_section'>
-    <Link to="/"><Button className='my-3' variant="success">Back</Button></Link>
-      <Form.Select aria-label="Default select example">
-        <option>Search your blog</option>
-        {UiShow.map((item)=>(
-        <option value="1">{item.categori}</option>
+      <Link to="/"><Button className='my-3' variant="success">Back</Button></Link>
 
-        ))}
-      </Form.Select>
+      <div className='Total_blog'>
+        <p>Total Blog : {UiShow.length}</p>
+      </div>
+      <div className='flex w-25'>
 
+        <p>Search blog title name</p>
+        <Form className="d-flex mb-3">
+          <Form.Control onChange={handleUserListSearch}
+            type="search"
+            placeholder="Search"
+            className="me-2"
+            aria-label="Search"
+          />
+        </Form>
+
+      </div>
     </div>
-      <div className='row justify-content-center'>
+
+      {SearchArray.length > 0 
+      ?
+      (<div className='row justify-content-center'>
+
+        {SearchArray.map((item)=>(
+          <div data-aos="fade-right" onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
+            
+            <div className='card p-0 overflow-hidden h-100 shadow p-2' >
+              <Card.Img className='img_height' src={item.image} variant="top"></Card.Img>
+                  
+              <Card.Body>
+                  <Card.Title> Title :{item.title} </Card.Title>
+                  <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link> 
+
+              </Card.Body>
+            </div>
+                  
+          </div>
+        ))}
+        
+      </div>) 
+      : 
+      (<div className='row justify-content-center'>
 
         {UiShow.map((item)=>(
           <div data-aos="fade-right" onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
@@ -70,7 +123,10 @@ const AllBlog = () => {
           </div>
         ))}
         
-      </div>
+      </div>)}
+      
+
+
     </section> 
     </>
   )
