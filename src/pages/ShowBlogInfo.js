@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row,Button } from 'react-bootstrap'
+import { Container, Row,Button, Col } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { blogInformation } from '../slice/BlogDetails'
@@ -39,46 +39,50 @@ const ShowBlogInfo = () => {
         <Container>
         <ScrollToTop smooth />
             <Row>
-                
-                <section className='py-4 container'>
-                    
-                    <div  className='col-11 col-md-6 col-lg-4 mx-0 mb-4 w-100'>
-                        
-                        <div className='card p-0 overflow-hidden shadow' >
-                            <div className='showImg'>
-                            <Card.Img className='img_height1' src={data.image} variant="top"></Card.Img>
+                <Col md="9">
 
-                            </div>
+                    <section className='py-4 container'>
+                        
+                        <div  className='col-11 col-md-6 col-lg-4 mx-0 mb-4 w-100'>
                             
-                            <Card.Body>
-                                <h1>Title : {data.title}</h1>
-                                <h4>Categori : {data.categori}</h4>
-                                <p>Author Name : {data.author}</p>
-                                <p>Discription : {data.discription}</p>
-                                <p>Upload Date : {data.date}</p>
-                                <Link to="/"> <Button variant="primary">Back Home</Button></Link>
-                            </Card.Body>
+                            <div className='card p-0 overflow-hidden shadow' >
+                                <div className='showImg'>
+                                <img className='w-100' src={data.image}/>
+
+                                </div>
+                                
+                                <Card.Body>
+                                    <h1>Title : {data.title}</h1>
+                                    <h4>Categori : {data.categori}</h4>
+                                    <p>Author Name : {data.author}</p>
+                                    <p>Discription : {data.discription}</p>
+                                    <p>Upload Date : {data.date}</p>
+                                    <Link to="/"> <Button variant="primary">Back Home</Button></Link>
+                                </Card.Body>
+                            </div>
+                                
                         </div>
                             
-                    </div>
-                        
-                </section>
+                    </section>
+                </Col>
+                
                
+                <Col md="3">
 
-                <section className='py-4 container'>
-                    <div className='row justify-content-center'>
+                <section className='py-4'>
+                    <div className='BlogShow-scroll'>
 
                         {UiShow.map((item)=>(
                         <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
                             
-                            <div className='card p-0 overflow-hidden h-100 shadow p-2'>
-                            <Card.Img className='img_height2' src={item.image} variant="top"></Card.Img>
-                                
-                            <Card.Body>
-                                <Card.Title> Title :{item.title} </Card.Title>
-                                <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link> 
+                            <div className='card p-0 shadow p-2 card-sizing'>
+                                <Card.Img className='img_height2' src={item.image} variant="top"></Card.Img>
+                                    
+                                <Card.Body>
+                                    <Card.Title> Title :{item.title} </Card.Title>
+                                    <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link> 
 
-                            </Card.Body>
+                                </Card.Body>
                             </div>
                                 
                         </div>
@@ -86,6 +90,7 @@ const ShowBlogInfo = () => {
 
                     </div>
                 </section>
+                </Col>
 
             </Row>
         </Container>
