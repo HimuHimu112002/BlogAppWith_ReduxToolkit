@@ -13,6 +13,7 @@ import ShowBlogInfo from './pages/ShowBlogInfo';
 import Contact from './pages/Contact';
 import AllBlog from './pages/AllBlog';
 import About from './pages/About';
+import Error from './component/Error';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About></About>
+  },
+  {
+    path: "/*",
+    element: <Error></Error>
   },
 ]);
 

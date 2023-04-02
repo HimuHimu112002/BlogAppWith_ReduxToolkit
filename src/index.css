@@ -18,6 +18,10 @@ a{
 .NavBg{
   margin-top: 100px;
   background-color: black;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
 }
 
 .Nav-Menu--SearchIcon{
@@ -27,7 +31,7 @@ a{
 /* ===============> nav menu design end <================*/
 
 .slider img{
-  height: 90vh;
+  height: 100vh;
 }
 
 /* ===============> slider design end <================*/
@@ -133,6 +137,7 @@ select{
 .card-sizing{
   width: 280px;
 }
+
 /* ===============> footer design start <================*/
 
 .footerBG{
