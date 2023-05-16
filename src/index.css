@@ -48,7 +48,7 @@ a{
 }
 
 .img_height{
-  height: 400px;
+  height: 250px;
 }
 
 .img_height2{
@@ -59,7 +59,7 @@ a{
   padding: 10px;
   width: 100%;
   height: auto;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   overflow: hidden;
 
 }
@@ -101,7 +101,7 @@ select{
 }
 
 .bg_img{
-  background-image: url(../public/image/res2.jpg);
+  background-image: url(../public/image/h1.jpg);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -125,6 +125,14 @@ select{
 
 .home_search{
   width: 250px;
+}
+
+.Welcome{
+  justify-content: space-between;
+}
+
+.welcomeBtn{
+  background-color: #FF69B4;
 }
 
 .BlogShow-scroll{

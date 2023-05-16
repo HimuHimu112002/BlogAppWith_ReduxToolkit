@@ -84,7 +84,7 @@ return (
           <div data-aos="zoom-in" onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
             
             <div className='card p-0 shadow p-2'>
-              <Card.Img className='img_height' src={item.image} variant="top"></Card.Img>
+              <Card.Img className='img_height img-fluit' src={item.image} variant="top"></Card.Img>
                   
               <Card.Body>
                   <Card.Title> Title :{item.title} </Card.Title>

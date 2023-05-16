@@ -40,6 +40,7 @@ const ShowBlogInfo = () => {
         <ScrollToTop smooth />
             <Row>
                 <Col md="9">
+                
 
                     <section className='py-4 container'>
                         
@@ -47,6 +48,11 @@ const ShowBlogInfo = () => {
                             
                             <div className='card p-0 overflow-hidden shadow' >
                                 <div className='showImg'>
+                                <div className='Welcome d-flex'>
+
+                                <p className='welcomeBtn p-1 rounded text-white px-2'>Welcome</p>
+                                <p className='welcomeBtn p-1 rounded text-white px-2'>Upload Date : {data.date}</p>
+                                </div>
                                 <img className='w-100' src={data.image}/>
 
                                 </div>
@@ -56,7 +62,6 @@ const ShowBlogInfo = () => {
                                     <h4>Categori : {data.categori}</h4>
                                     <p>Author Name : {data.author}</p>
                                     <p>Discription : {data.discription}</p>
-                                    <p>Upload Date : {data.date}</p>
                                     <Link to="/"> <Button variant="primary">Back Home</Button></Link>
                                 </Card.Body>
                             </div>
