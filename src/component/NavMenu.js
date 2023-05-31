@@ -12,12 +12,12 @@ const NavMenu = () => {
                 <Col>
                     <Navbar expand="lg">
                       <Container fluid>
-                          <Navbar.Brand href="#"><img className='w-25' src='image/bb.png'></img></Navbar.Brand>
+                          <Navbar.Brand href="#"><img className='logo_img img-fluid' src='image/blog.png'></img></Navbar.Brand>
 
                           <Navbar.Toggle aria-controls="navbarScroll" />
                           <Navbar.Collapse id="navbarScroll">
 
-                          <Nav className="m-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+                          <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
                               <Link to="/"><Nav.Link href="#action1">Home</Nav.Link></Link>
                               <Link to="/allblog"><Nav.Link href="#action2">Blog</Nav.Link></Link> 
                               <Link to="/about"><Nav.Link href="#action2">About</Nav.Link></Link>

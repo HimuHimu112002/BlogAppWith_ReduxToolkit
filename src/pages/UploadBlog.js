@@ -10,7 +10,7 @@ const UploadBlog = () => {
     <Container>
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
-        <Col sm={2} className="mt-5">
+        <Col sm={2} className="mt-5 shadow-lg">
           <Nav variant="pills" className="tab_bg flex-column">
 
             <Nav.Item className='py-3'>

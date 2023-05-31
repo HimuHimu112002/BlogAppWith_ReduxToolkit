@@ -4,8 +4,8 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { useDispatch} from 'react-redux';
 import { blogInformation } from '../slice/BlogDetails';
 import { Link } from 'react-router-dom';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+//import AOS from 'aos';
+//import 'aos/dist/aos.css';
 import {Form } from 'react-bootstrap'
 
 
@@ -16,7 +16,7 @@ const BlogItemProps = () => {
 
   const [UiShow, setUiShow] = useState([]);
   let [SearchArray, setSearchArray] = useState([])
-  let [zero, setzero] = useState("")
+  //let [zero, setzero] = useState("")
 
   useEffect(()=>{
     onValue(ref(db, 'blog'), (snapshot) => {
@@ -35,9 +35,10 @@ const BlogItemProps = () => {
     localStorage.setItem("blogInfo", JSON.stringify(item))
   }
 
-  useEffect(()=>{
-    AOS.init({duration: 2000})
-  },[])
+  // useEffect(()=>{
+  //   AOS.init({duration: 1000})
+  // data-aos="fade"
+  // },[])
 
   // Search Section
   let handleUserListSearch=(e)=>{
@@ -62,6 +63,7 @@ return (
     <section className='py-4 container'>
       <div className='row justify-content-center'>
 
+          {/* Search Section ===========================*/}
           <div>
 
             <p>Search blog Categori</p>           
@@ -81,7 +83,7 @@ return (
         {SearchArray.length > 0 
         ?
         (SearchArray.map((item)=>(
-          <div data-aos="zoom-in" onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
+          <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
             
             <div className='card p-0 shadow p-2'>
               <Card.Img className='img_height img-fluit' src={item.image} variant="top"></Card.Img>
@@ -99,7 +101,7 @@ return (
         ))) 
         :
         UiShow.map((item)=>(
-          <div data-aos="zoom-in" onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
+          <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
             
             <div className='card p-0 shadow p-2' >
               <Card.Img className='img_height' src={item.image} variant="top"></Card.Img>

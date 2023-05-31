@@ -1,23 +1,25 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Playfair', serif !important;
 
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 a{
-  color: white !important;
+  color: black !important;
   text-decoration: none !important;
+  font-size: 20px;
+  margin: 0px 10px;
 }
 
 .NavBg{
   margin-top: 100px;
-  background-color: black;
+  background-color: #F5F5F3;
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -26,6 +28,10 @@ a{
 
 .Nav-Menu--SearchIcon{
   color: white !important;
+}
+
+.logo_img{
+  width: 12%;
 }
 
 /* ===============> nav menu design end <================*/
@@ -37,7 +43,7 @@ a{
 /* ===============> slider design end <================*/
 
 .tab_bg{
-  background-color: black;
+  /* background-color: black; */
   height: auto;
   overflow: hidden;
   padding-bottom: 20px;
@@ -149,9 +155,9 @@ select{
 /* ===============> footer design start <================*/
 
 .footerBG{
-  background-color: black;
+  background-color: #F5F5F3;
   padding: 90px 0px;
-  color: white;
+  color: black;
 }
 
 .footerBG ul{
@@ -161,6 +167,7 @@ select{
 
 .footerBG ul li{
   list-style-type: none;
+  margin: 15px 0px;
 }
 
 /* ===============> footer design end <================*/
