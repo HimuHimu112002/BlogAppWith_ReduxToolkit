@@ -22,7 +22,7 @@ const NavMenu = () => {
                               <Link to="/allblog"><Nav.Link href="#action2">Blog</Nav.Link></Link> 
                               <Link to="/about"><Nav.Link href="#action2">About</Nav.Link></Link>
                               <Link to="/contact"><Nav.Link href="#action2">Contact</Nav.Link></Link>
-                            <Link to="/uploadBlog"><Nav.Link href="#action2">Upload Your Blog</Nav.Link></Link>
+                              <Link to="/uploadBlog"><Nav.Link href="#action2">Upload Your Blog</Nav.Link></Link>
                                             
                           </Nav>
                           

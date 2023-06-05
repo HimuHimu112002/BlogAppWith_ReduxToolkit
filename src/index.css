@@ -26,6 +26,10 @@ a{
 
 }
 
+.navbar-brand{
+  width: 40%;
+}
+
 .Nav-Menu--SearchIcon{
   color: white !important;
 }
@@ -170,7 +174,7 @@ select{
   padding: 90px 0px;
   color: black;
 }
-
+bg
 .footerBG ul{
   margin: 0;
   padding: 0;
@@ -178,7 +182,7 @@ select{
 
 .footerBG ul li{
   list-style-type: none;
-  margin: 15px 0px;
+  margin: 10px 0px;
 }
 
 .published{
