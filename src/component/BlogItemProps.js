@@ -4,8 +4,6 @@ import { getDatabase, ref, onValue } from "firebase/database";
 import { useDispatch} from 'react-redux';
 import { blogInformation } from '../slice/BlogDetails';
 import { Link } from 'react-router-dom';
-//import AOS from 'aos';
-//import 'aos/dist/aos.css';
 import {Form } from 'react-bootstrap'
 
 
@@ -34,11 +32,6 @@ const BlogItemProps = () => {
     dispatch(blogInformation(item))
     localStorage.setItem("blogInfo", JSON.stringify(item))
   }
-
-  // useEffect(()=>{
-  //   AOS.init({duration: 1000})
-  // data-aos="fade"
-  // },[])
 
   // Search Section
   let handleUserListSearch=(e)=>{
@@ -107,9 +100,13 @@ return (
               <Card.Img className='img_height' src={item.image} variant="top"></Card.Img>
                   
               <Card.Body>
+                  <p className='published'>Published</p>
                   <Card.Title> Title :{item.title} </Card.Title>
                   <p> Categori :{item.categori} </p>
-                  <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link> 
+                  <div className='view_details'>
+
+                  <Link to="/blogInfo"><Button className='text-white font-bold' variant="info">View Details</Button></Link> 
+                  </div>
 
               </Card.Body>
             </div>

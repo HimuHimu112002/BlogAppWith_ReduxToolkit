@@ -86,6 +86,7 @@ a{
 
 .from_main--section{
   margin: auto;
+  z-index: 1;
 }
 
 .delete_Button--Align{
@@ -107,12 +108,22 @@ select{
 }
 
 .bg_img{
-  background-image: url(../public/image/h1.jpg);
+  background-image: url(../public/image/h10.jpg);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  position: relative;
 }
 
+.overLy{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  opacity: .6;
+}
 
 .Total_blog{
   background-color: cadetblue;
@@ -170,4 +181,16 @@ select{
   margin: 15px 0px;
 }
 
+.published{
+  background-color: rgb(25, 199, 126);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 30px;
+  color: white;
+}
+
+.view_details a{
+  margin: 0 !important;
+  color: #FF69B4 !important;
+}
 /* ===============> footer design end <================*/
