@@ -67,7 +67,11 @@ const ShowBlogInfo = () => {
                                     <h4>Categori : {data.categori}</h4>
                                     <p>Author Name : {data.author}</p>
                                     <p>Discription : {data.discription}</p>
-                                    <Link to="/"> <Button className='text-white' variant="info">Back Home</Button></Link>
+
+                                    <div className='view_details'>
+
+                                        <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                                    </div>
                                 </Card.Body>
                             </div>
                                 
@@ -83,14 +87,17 @@ const ShowBlogInfo = () => {
                     <div className='BlogShow-scroll py-4'>
 
                         {UiShow.map((item)=>(
-                        <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
+                        <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mb-4'>
                             
                             <div className='card p-0 shadow p-2 card-sizing'>
                                 <Card.Img className='img_height2' src={item.image} variant="top"></Card.Img>
                                     
                                 <Card.Body>
                                     <Card.Title> Title :{item.title} </Card.Title>
-                                    <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link> 
+                                    <div className='view_details'>
+
+                                        <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                                    </div> 
 
                                 </Card.Body>
                             </div>
