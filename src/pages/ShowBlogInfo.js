@@ -70,7 +70,7 @@ const ShowBlogInfo = () => {
 
                                     <div className='view_details'>
 
-                                        <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                                        <Link to="/"><Button className='text-white font-bold Allbtn'>Back Home</Button></Link> 
                                     </div>
                                 </Card.Body>
                             </div>
