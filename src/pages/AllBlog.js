@@ -63,7 +63,7 @@ const AllBlog = () => {
     <h1 className='text-center py-5'>All Blogs</h1>
     <section className='py-4 container'>
     <div className='Search_section'>
-      <Link to="/"><Button className='my-3 text-white' variant="info">Back</Button></Link>
+      <Link to="/"><Button className='my-6 text-white Allbtn'>Back</Button></Link>
 
       <div className='Total_blog'>
         <p>Total Blog : {UiShow.length}</p>
@@ -95,7 +95,10 @@ const AllBlog = () => {
                   
               <Card.Body>
                   <Card.Title> Title :{item.title} </Card.Title>
-                  <Link to="/blogInfo"><Button className='text-white' variant="info">View Details</Button></Link> 
+                  <div className='view_details'>
+
+                    <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                  </div> 
 
               </Card.Body>
             </div>
@@ -115,7 +118,11 @@ const AllBlog = () => {
                   
               <Card.Body>
                   <Card.Title> Title :{item.title} </Card.Title>
-                  <Link to="/blogInfo"><Button className='text-white' variant="info">View Details</Button></Link> 
+
+                  <div className='view_details'>
+
+                    <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                  </div>
 
               </Card.Body>
             </div>

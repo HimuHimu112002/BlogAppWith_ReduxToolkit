@@ -79,8 +79,8 @@ const ShowBlogInfo = () => {
                
                 <Col md="3">
 
-                <section className='py-4'>
-                    <div className='BlogShow-scroll'>
+                <section >
+                    <div className='BlogShow-scroll py-4'>
 
                         {UiShow.map((item)=>(
                         <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>

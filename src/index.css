@@ -130,7 +130,7 @@ select{
 }
 
 .Total_blog{
-  background-color: cadetblue;
+  background-color: #00aeff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,6 +142,9 @@ select{
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
   display: inline-block;
+  border-left: 8px solid rgb(0, 238, 255);
+  border-right: 8px solid rgb(0, 238, 255);
+ 
 }
 
 .home_search{
@@ -198,3 +201,32 @@ bg
   color: #FF69B4 !important;
 }
 /* ===============> footer design end <================*/
+.dash{
+  height: 90vh;
+  
+}
+.nav-pills .nav-link{
+  padding: 18px 20px;
+  font-size: 22px;
+}
+.nav-pills .nav-link.active{
+  background-color: #e4e4e4 !important;
+  padding: 18px 20px;
+  font-size: 22px;
+  border-right: 13px solid rgb(7, 212, 226) !important;
+}
+
+.Allbtn{
+  margin: 0 !important;
+  padding: 0 !important;
+  padding: 10px 35px !important;
+  font-size: 22px !important;
+  color: rgb(255, 255, 255) !important;
+  background-color: #00aeff !important;
+  border: none !important;
+}
+
+.backHome{
+  margin-left: 12px;
+
+}

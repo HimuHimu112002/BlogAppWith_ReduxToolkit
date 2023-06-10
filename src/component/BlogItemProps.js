@@ -48,12 +48,13 @@ const BlogItemProps = () => {
         })
     }
   }
+
   
 return (
 
   <>
-   
     <section className='py-4 container'>
+    
       <div className='row justify-content-center'>
 
           {/* Search Section ===========================*/}
@@ -82,14 +83,17 @@ return (
               <Card.Img className='img_height img-fluit' src={item.image} variant="top"></Card.Img>
                   
               <Card.Body>
+                  <p className='published'>Published</p>
                   <Card.Title> Title :{item.title} </Card.Title>
                   <p> Categori :{item.categori} </p>
-                  <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link> 
+                  <div className='view_details'>
+
+                    <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                  </div>  
 
               </Card.Body>
             </div>
             
-                  
           </div>
         ))) 
         :
@@ -105,12 +109,12 @@ return (
                   <p> Categori :{item.categori} </p>
                   <div className='view_details'>
 
-                  <Link to="/blogInfo"><Button className='text-white font-bold' variant="info">View Details</Button></Link> 
+                  <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
                   </div>
 
               </Card.Body>
             </div>
-            
+          
           </div>
 
         ))}

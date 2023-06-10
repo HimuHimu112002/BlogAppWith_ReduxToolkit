@@ -35,8 +35,8 @@ const Contact = () => {
 
             <div>
 
-            <Button className='contact_button' variant="info">sent</Button>
-            <Link to="/"><Button variant="info">Bank Home</Button></Link>
+            <Button className='contact_button Allbtn'>sent</Button>
+            <Link to="/"><Button  className='Allbtn'>Bank Home</Button></Link>
             </div>
         </Row>
     </Container>

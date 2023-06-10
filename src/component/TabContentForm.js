@@ -120,7 +120,7 @@ let handleSubmit =()=>{
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
 
-            <Button onClick={handleSubmit} variant="primary">Upload</Button>
+            <Button className='Allbtn' onClick={handleSubmit}>Upload</Button>
           </Form>
         </Col>
       </Row>

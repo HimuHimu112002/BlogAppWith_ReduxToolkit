@@ -72,7 +72,10 @@ const TabAllBlog = () => {
                     <Card.Title> Title :{item.title} </Card.Title>
                     <div className='delete_Button--Align'>
 
-                    <Link to="/blogInfo"><Button variant="primary">View Details</Button></Link>
+                    <div className='view_details'>
+
+                      <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                    </div>
                    
                     <Button onClick={()=>handleBlogDelete(item.id)} variant="danger">Delete
                         <AiFillDelete className=''></AiFillDelete>

@@ -31,7 +31,7 @@ const ContactFrom = () => {
 
                     <div className='Count_contact-button mb-5'>
 
-                        <Button className='px-5 py-2' variant="primary">sent</Button>
+                        <Button className='px-5 py-2 Allbtn'>sent</Button>
 
                     </div>
                 </Form>

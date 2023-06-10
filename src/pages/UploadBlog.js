@@ -7,10 +7,10 @@ import DeleteTabBlog from '../component/DeleteTabBlog'
 
 const UploadBlog = () => {
   return (
-    <Container>
+    <Container fluid fixed="top">
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
       <Row>
-        <Col sm={2} className="mt-5 shadow-lg">
+        <Col sm={2} className="mt-5 shadow-lg dash">
           <Nav variant="pills" className="tab_bg flex-column">
 
             <Nav.Item className='py-3'>
@@ -25,7 +25,11 @@ const UploadBlog = () => {
               <Nav.Link eventKey="four">Delete Your Blog</Nav.Link>
             </Nav.Item >
 
-            <Link to="/"><Button className='mt-5 mx-2' variant="primary">Back to home</Button></Link>
+            <div className='backHome'>
+
+              <Link to="/"><Button className='text-white font-bold Allbtn'>Back Home</Button></Link> 
+            </div>
+
           </Nav>
         </Col>
 
