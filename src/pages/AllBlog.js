@@ -2,20 +2,24 @@ import React, { useState, useEffect } from 'react';
 import {Button,Card, Form } from 'react-bootstrap'
 import { getDatabase, ref, onValue } from "firebase/database";
 import { blogInformation } from '../slice/BlogDetails';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ScrollToTop from "react-scroll-to-top";
 import { useDispatch} from 'react-redux';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const AllBlog = () => {
-
     const db = getDatabase()
     const dispatch = useDispatch()
     const [UiShow, setUiShow] = useState([]);
     let [SearchArray, setSearchArray] = useState([])
+    let [load, setload] = useState(true)
 
-
+    setTimeout(()=>{
+      setload(false)
+    },3000)
     useEffect(()=>{
         onValue(ref(db, 'blog'), (snapshot) => {
           let arr = []
@@ -83,7 +87,9 @@ const AllBlog = () => {
       </div>
     </div>
 
-      {SearchArray.length > 0 
+    {load ?<Skeleton count={15}/> :
+    
+      SearchArray.length > 0 
       ?
       (<div className='row justify-content-center'>
 
@@ -130,8 +136,10 @@ const AllBlog = () => {
           </div>
         ))}
         
-      </div>)}
-      
+      </div>)
+
+    }
+    
 
 
     </section> 

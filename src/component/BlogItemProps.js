@@ -5,7 +5,8 @@ import { useDispatch} from 'react-redux';
 import { blogInformation } from '../slice/BlogDetails';
 import { Link } from 'react-router-dom';
 import {Form } from 'react-bootstrap'
-
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const BlogItemProps = () => {
 
@@ -15,6 +16,11 @@ const BlogItemProps = () => {
   const [UiShow, setUiShow] = useState([]);
   let [SearchArray, setSearchArray] = useState([])
   //let [zero, setzero] = useState("")
+  let [load, setload] = useState(true)
+
+    setTimeout(()=>{
+      setload(false)
+    },3000)
 
   useEffect(()=>{
     onValue(ref(db, 'blog'), (snapshot) => {
@@ -49,78 +55,82 @@ const BlogItemProps = () => {
     }
   }
 
-  
 return (
 
   <>
+
+    {load ?<Skeleton count={15}/> :
+    
     <section className='py-4 container'>
     
-      <div className='row justify-content-center'>
-
-          {/* Search Section ===========================*/}
-          <div>
-
-            <p>Search blog Categori</p>           
-
-              <Form.Select onChange={handleUserListSearch} className='home_search' aria-label="Default select example">
-                  <option>All</option>
-                  {UiShow.map((item)=>(
-                  <>
-                  <option>{item.categori}</option>
-                  </>
-                  ))}
-              </Form.Select>
-
-          </div>
-
-
-        {SearchArray.length > 0 
-        ?
-        (SearchArray.map((item)=>(
-          <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
-            
-            <div className='card p-0 shadow p-2'>
-              <Card.Img className='img_height img-fluit' src={item.image} variant="top"></Card.Img>
-                  
-              <Card.Body>
-                  <p className='published'>Published</p>
-                  <Card.Title> Title :{item.title} </Card.Title>
-                  <p> Categori :{item.categori} </p>
-                  <div className='view_details'>
-
-                    <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
-                  </div>  
-
-              </Card.Body>
-            </div>
-            
-          </div>
-        ))) 
-        :
-        UiShow.map((item)=>(
-          <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
-            
-            <div className='card p-0 shadow p-2' >
-              <Card.Img className='img_height' src={item.image} variant="top"></Card.Img>
-                  
-              <Card.Body>
-                  <p className='published'>Published</p>
-                  <Card.Title> Title :{item.title} </Card.Title>
-                  <p> Categori :{item.categori} </p>
-                  <div className='view_details'>
-
-                  <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
-                  </div>
-
-              </Card.Body>
-            </div>
+    <div className='row justify-content-center'>
+    
+        {/* Search Section ===========================*/}
+        <div>
+    
+          <p>Search blog Categori</p>           
+    
+            <Form.Select onChange={handleUserListSearch} className='home_search' aria-label="Default select example">
+                <option>All</option>
+                {UiShow.map((item)=>(
+                <>
+                <option>{item.categori}</option>
+                </>
+                ))}
+            </Form.Select>
+    
+        </div>
+    
+    
+      {SearchArray.length > 0 
+      ?
+      (SearchArray.map((item)=>(
+        <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
           
+          <div className='card p-0 shadow p-2'>
+            <Card.Img className='img_height img-fluit' src={item.image} variant="top"></Card.Img>
+                
+            <Card.Body>
+                <p className='published'>Published</p>
+                <Card.Title> Title :{item.title} </Card.Title>
+                <p> Categori :{item.categori} </p>
+                <div className='view_details'>
+    
+                  <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                </div>  
+    
+            </Card.Body>
           </div>
-
-        ))}
+          
+        </div>
+    
+      ))) 
+      :
+      UiShow.map((item)=>(
+        <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mx-0 mb-4'>
+          
+          <div className='card p-0 shadow p-2' >
+            <Card.Img className='img_height' src={item.image} variant="top"></Card.Img>
+                
+            <Card.Body>
+                <p className='published'>Published</p>
+                <Card.Title> Title :{item.title} </Card.Title>
+                <p> Categori :{item.categori} </p>
+                <div className='view_details'>
+    
+                <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                </div>
+    
+            </Card.Body>
+          </div>
         
-      </div>
+        </div>
+    
+      ))}
+      
+    </div>
     </section>
+    }
     
   </>
 
@@ -128,3 +138,5 @@ return (
 }
 
 export default BlogItemProps
+
+
