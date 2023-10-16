@@ -5,6 +5,8 @@ import { blogInformation } from '../slice/BlogDetails';
 import { Link } from 'react-router-dom';
 import ScrollToTop from "react-scroll-to-top";
 import { useDispatch} from 'react-redux';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const TabAllBlog = () => {
 
@@ -34,7 +36,7 @@ const TabAllBlog = () => {
       <ScrollToTop smooth/>
       <section className='py-4 container'>
         <div className='row justify-content-center'>
-
+          
           {UiShow.map((item)=>(
             <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-6 mx-0 mb-4'>
               

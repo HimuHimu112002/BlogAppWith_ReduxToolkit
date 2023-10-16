@@ -4,7 +4,6 @@ import Footer from './Footer'
 import NavMenu from './NavMenu'
 import Slider from './Slider'
 import ScrollToTop from "react-scroll-to-top";
-import CountSection from './CountSection'
 
 const RootComponents = () => {
   return (
@@ -13,7 +12,6 @@ const RootComponents = () => {
       <NavMenu></NavMenu>
       <Slider></Slider>
       <BlogItemProps></BlogItemProps>
-      <CountSection></CountSection>
       <Footer></Footer>
     </div>
   )

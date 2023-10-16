@@ -5,11 +5,6 @@ body {
 
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 a{
   color: black !important;
   text-decoration: none !important;
@@ -47,7 +42,6 @@ a{
 /* ===============> slider design end <================*/
 
 .tab_bg{
-  /* background-color: black; */
   height: auto;
   overflow: hidden;
   padding-bottom: 20px;
@@ -97,7 +91,6 @@ a{
   display: flex;
   justify-content: space-between;
 }
-
 
 .Search_section{
   display: flex;
@@ -159,25 +152,20 @@ select{
   background-color: #FF69B4;
 }
 
-.BlogShow-scroll{
-  overflow-y: scroll;
-  height: 100vh;
-  overflow-x: hidden;
- 
-}
-
 .card-sizing{
   width: 280px;
+  display: flex !important;
+
 }
 
 /* ===============> footer design start <================*/
 
 .footerBG{
   background-color: #F5F5F3;
-  padding: 90px 0px;
+  padding: 10px 0px;
   color: black;
 }
-bg
+
 .footerBG ul{
   margin: 0;
   padding: 0;
@@ -200,15 +188,19 @@ bg
   margin: 0 !important;
   color: #FF69B4 !important;
 }
+
 /* ===============> footer design end <================*/
+
 .dash{
   height: 90vh;
   
 }
+
 .nav-pills .nav-link{
   padding: 18px 20px;
   font-size: 22px;
 }
+
 .nav-pills .nav-link.active{
   background-color: #e4e4e4 !important;
   padding: 18px 20px;

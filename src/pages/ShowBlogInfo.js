@@ -37,31 +37,24 @@ const ShowBlogInfo = () => {
   return (
     <>
         <Container>
+
         <ScrollToTop smooth />
             <Row>
                 <Col md="9">
-                
-
                     <section className='py-4 container'>
                         
                         <div  className='col-11 col-md-6 col-lg-4 mx-0 mb-4 w-100'>
                             
-                            <div className='card p-0 overflow-hidden shadow' >
+                            <div className='card p-0 overflow-hidden shadow-sm' >
                                 <div className='showImg'>
-                                <div className='Welcome d-flex'>
-
-                                
-                                <p className='welcomeBtn p-1 rounded text-white px-2'>Upload Date : {data.date}</p>
-                                </div>
-                                <img className='w-100' src={data.image}/>
-
+                                    <img className='w-100' src={data.image}/>
                                 </div>
                                 
                                 <Card.Body>
-                                    <div className='Welcome d-flex'>
-
-                                    <p className='published'>Published</p>
-                                    <p className='welcomeBtn p-1 rounded text-white px-2'>Welcome</p>
+                                    <div className='Welcome d-flex py-2'>
+                                        <p className='published'>Published</p>
+                                        <p className='published p-1 rounded text-white px-2'>Upload Date : {data.date}</p>
+                                        <p className='published p-1 rounded text-white px-2'>Welcome</p>
                                     </div>
                                     <h1>Title : {data.title}</h1>
                                     <h4>Categori : {data.categori}</h4>
@@ -80,37 +73,34 @@ const ShowBlogInfo = () => {
                     </section>
                 </Col>
                 
-               
                 <Col md="3">
+                    <section >
+                        <div className='BlogShow-scroll py-4'>
 
-                <section >
-                    <div className='BlogShow-scroll py-4'>
-
-                        {UiShow.map((item)=>(
-                        <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mb-4'>
-                            
-                            <div className='card p-0 shadow p-2 card-sizing'>
-                                <Card.Img className='img_height2' src={item.image} variant="top"></Card.Img>
-                                    
-                                <Card.Body>
-                                    <Card.Title> Title :{item.title} </Card.Title>
-                                    <div className='view_details'>
-
-                                        <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
-                                    </div> 
-
-                                </Card.Body>
-                            </div>
+                            {UiShow.map((item)=>(
+                            <div onClick={()=>handleDetails(item)} className='col-11 col-md-6 col-lg-4 mb-2'>
                                 
+                                <div className='card shadow-sm card-sizing'>
+                                   
+                                    <Card.Body>
+                                        <Card.Title> Title :{item.title} </Card.Title>
+                                        <div className='view_details'>
+
+                                            <Link to="/blogInfo">Read More >>></Link> 
+                                        </div> 
+
+                                    </Card.Body>
+                                </div>
+                                    
+                            </div>
+                            ))}
+
                         </div>
-                        ))}
-
-                    </div>
-                </section>
+                    </section>
                 </Col>
-
             </Row>
         </Container>
+        
     </>
   )
 }

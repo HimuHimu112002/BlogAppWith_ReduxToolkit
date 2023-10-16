@@ -103,7 +103,7 @@ const AllBlog = () => {
                   <Card.Title> Title :{item.title} </Card.Title>
                   <div className='view_details'>
 
-                    <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                    <Link to="/blogInfo">Read More >>></Link> 
                   </div> 
 
               </Card.Body>
@@ -127,7 +127,7 @@ const AllBlog = () => {
 
                   <div className='view_details'>
 
-                    <Link to="/blogInfo"><Button className='text-white font-bold Allbtn'>View Details</Button></Link> 
+                    <Link to="/blogInfo">Read More >>></Link> 
                   </div>
 
               </Card.Body>
