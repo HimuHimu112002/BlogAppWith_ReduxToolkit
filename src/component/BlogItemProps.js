@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import {Form } from 'react-bootstrap'
 import 'react-loading-skeleton/dist/skeleton.css'
 import ListGroup from 'react-bootstrap/ListGroup';
+import QRCode from "react-qr-code";
 const BlogItemProps = () => {
 
   const db = getDatabase()
@@ -48,6 +49,8 @@ const BlogItemProps = () => {
     }
   }
 
+  let url = "https://monumental-yeot-a61ad5.netlify.app"
+
 return (
 
   <>
@@ -80,6 +83,16 @@ return (
                   </>
                   ))}
               </ListGroup>
+              <h4 className='mt-4'>Scan the QR code and get website url</h4>
+              <div style={{ height: "30%", maxWidth: 100, width: "100%" }}>
+                <QRCode
+                  size={356}
+                  style={{ height: "30%", maxWidth: "100%", width: "100%" }}
+                  value={`https://monumental-yeot-a61ad5.netlify.app`}
+                  viewBox={`0 0 256 256`}
+                />
+              </div>
+
         </Col>
         <Col md={9}>
 
